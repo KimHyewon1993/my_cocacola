@@ -1,0 +1,396 @@
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1000;
+    background: #171616;
+    .text-area {
+        @include positionCenter;
+        font-family: $font-en;
+        color: #fff;
+    }
+    .text-box {
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+    }
+    .line01 {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    .line02 {
+        font-size: 50px;
+        margin-top: 5px;
+        letter-spacing: 10px;
+    }
+}
+.sc-visual {
+    position: relative;
+    height: 100vh;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background-image: linear-gradient(180deg,rgba(27,27,27,0),#171616 80%);
+    }
+    .img-area {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .text-area {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 100%;
+        .desc {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            span{
+                font-size: 1.5vw;
+                font-weight: 400;
+                letter-spacing: 2px;
+            }
+        }
+        .title {
+            line-height: 1;
+            font-family: $font-en;
+            font-size: clamp(30px, 10vw, 170px);
+            .wrap{
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+                gap: 1vw;
+            }
+        }
+        .shortcut-box {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            font-family: $font-en;
+        }
+        .link-shortcut {
+            font-size: 2.3vw;
+            display: flex;
+            margin-top: 50px;
+            color: #fff;
+            &.contact {
+                margin-right: 50px;
+            }
+        }
+    }
+}
+.sc-gallery {
+    position: relative;
+    height: 100vw;
+
+    overflow: hidden;
+    .title {
+        z-index: 1;
+        position: absolute;
+        font-family: $font-en;
+        line-height: 1;
+        font-size: 5vw;
+        &.title1 {
+            top: 5vw;
+            left: 10vw;
+        }
+        &.title2 {
+            bottom: 35vw;
+            right: 10vw;
+        }
+    }
+    .circle-text {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0.6;
+        &.right {
+            top: -17vw;
+            right: -30vw;
+        }
+        &.left {
+            left: -35vw;
+            bottom: 2vw;
+        }
+        svg{
+            width: 70vw;
+            height: 70vw;
+            textPath {
+                font-size: 5px;
+            }
+        }
+    }
+    .img-area {
+        position: absolute;
+        img{
+            width: 100%;
+            opacity: 0.6;
+        }
+        &.top01 {
+            width: 25%;
+            top: 10vw;
+            left: -1vw;
+        }
+        &.top02 {
+            width: 45%;
+            top: 10vw;
+            left: 27vw;
+        }
+        &.top03 {
+            width: 20%;
+            right: -3vw;
+            top: 5vw;
+        }
+        &.bottom01 {
+            width: 35%;
+            left: -3vw;
+            bottom: 20vw;
+        }
+        &.bottom02 {
+            width: 40%;
+            bottom: 10vw;
+            right: 25vw;
+        }
+        &.bottom03 {
+            width: 30%;
+            bottom: 30vw;
+            right: -4vw;
+        }
+    }
+}
+.sc-plan {
+    padding: 200px 0;
+    .plan-list {
+        margin-top: 200px;
+        display: flex;
+        height: 100vh;
+        @include tablet {
+            flex-direction: column;
+        }
+        .plan-item {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        .img-area {
+            img {
+                width: 100%;
+                height: 110vh;
+                object-fit: cover;
+                object-position: 0px -100px;
+                opacity: 0.5;
+                @include tablet {
+                    height: 100%;
+                }
+            }
+        }
+        .text-area {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 60%;
+            width: 100%;
+            backdrop-filter: blur(5px);
+            line-height: 1;
+            padding: 45px;
+            @include tablet {
+                height: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+            .num-box {
+                display: flex;
+                overflow: hidden;
+            }
+            .num {
+                font-size: 30px;
+                font-weight: 500;
+                font-family: $font-en;
+                @include tablet {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .title-box {
+                display: flex;
+                overflow: hidden;
+            }
+            .title {
+                font-size: 3vw;
+                margin: 5px 0 20px;
+                font-family: $font-en;
+                @include tablet {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .desc {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                font-size: 1.1vw;
+                font-weight: 300;
+                line-height: 1.5;
+                opacity: 0.8;
+                .text {
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+.sc-history {
+    .group-photo {
+        position: relative;
+        overflow: hidden;
+        margin-top: 200px;
+        .img-area {
+            height: 100vh;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0.5;
+            }
+        }
+        .text-box {
+            margin-bottom: 100px;
+        }
+        .text-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 5;
+            .title {
+                position: relative;
+                display: block;
+                font-size: 6vw;
+                font-weight: 400;
+                overflow: hidden;
+                font-family: $font-en;
+                .front{
+                    display: inline-block;
+                    transition: transform 0.3s;
+                }
+                .back{
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%,100%);
+                    transition: transform 0.3s;
+                }
+                &:hover {
+                    .front {
+                        transform: translateY(-100%);
+                    }
+                    .back {
+                        transform: translate(-50%,0%);
+                        font-size: 7vw;
+                    }
+                }
+            }
+            .sub {
+                display: block;
+                font-size: 5vw;
+                font-weight: 400;
+            }
+            .date {
+                display: block;
+                color: red;
+                font-size: 2vw;
+            }
+        }
+    }
+}
+.sc-info {
+    display: flex;
+    gap: 50px;
+    padding: 200px 0 200px 80px;
+    align-items: center;
+    @include tablet {
+        padding: 200px 0 200px 20px;
+    }
+    &>div {
+        width: calc(100% / 2);
+    }
+    .text-area {
+        .title {
+            display: block;
+            font-size: 4.5vw;
+            line-height: 1;
+            font-family: $font-en;
+            margin-bottom: 20px;
+            span {
+                display: block;
+            }
+        }
+        .desc {
+            margin-bottom: 30px;
+            font-size: 1.1vw;
+            font-weight: 400;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+    }
+    .link-info {
+        display: block;
+        margin-top: 20px;
+        span{
+            font-size: 4.5vw;
+            font-family: $font-en;
+        }
+    }
+    .img-area {
+        position: relative;
+    }
+    .img-box {
+        position: relative;
+        .bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 5;
+        }
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: auto;
+            filter: grayscale(100%);
+        }
+    }
+}
+.sc-contact {
+    padding-bottom: 100px;
+    font-family: $font-en;
+    .link-contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        span {
+            font-size: 13vw;
+        }
+    }
+}

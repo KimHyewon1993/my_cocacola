@@ -1,0 +1,721 @@
+@charset "UTF-8";
+/*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 767px 이하일때*/
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.group-title .desc-box {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.group-title .desc {
+  color: rgba(237, 220, 212, 0.89);
+  font-size: 1.3vw;
+  letter-spacing: 0.1vw;
+}
+.group-title .title {
+  font-family: "voyage", serif;
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+  font-size: 6vw;
+  line-height: 1;
+  font-weight: 200;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+body {
+  font-family: "pretendard", sans-serif;
+  line-height: 1.2;
+  font-weight: 300;
+  background: #171616;
+  color: #fff6f2;
+}
+body.hidden {
+  overflow: hidden;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "pretendard";
+  src: url("../font/Pretendard-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "pretendard";
+  src: url("../font/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "pretendard";
+  src: url("../font/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "pretendard";
+  src: url("../font/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "voyage";
+  src: url("../font/Voyage-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+.footer {
+  padding: 40px 140px;
+}
+@media (max-width: 1023px) {
+  .footer {
+    padding: 40px 50px;
+  }
+}
+.footer .group-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .group-area .title {
+  display: block;
+  font-size: 4vw;
+  line-height: 1;
+  font-weight: 400;
+  font-family: "voyage", serif;
+  margin-bottom: 50px;
+}
+.footer .group-area a {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.3vw;
+  font-weight: 400;
+  transition: color 0.5s;
+}
+.footer .group-area a:hover {
+  color: red;
+}
+.footer .group-area.right a {
+  text-align: right;
+}
+.footer .copy {
+  margin-top: 50px;
+  font-size: 1.1vw;
+  font-weight: 400;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.header .group-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 30px;
+}
+@media (max-width: 1023px) {
+  .header .group-flex {
+    height: 70px;
+    padding: 0 15px;
+  }
+}
+.header .group-flex .logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 150px;
+}
+.header .group-flex .bg {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #f00;
+  border-radius: 50%;
+}
+@media (max-width: 1023px) {
+  .header .group-flex .bg {
+    width: 50px;
+    height: 50px;
+  }
+}
+.header .group-flex .link-logo {
+  position: absolute;
+  left: 30px;
+  width: 100px;
+  height: auto;
+}
+@media (max-width: 1023px) {
+  .header .group-flex .link-logo {
+    width: 60px;
+    left: 20px;
+  }
+}
+.header .group-flex .link-logo img {
+  width: 100%;
+  height: 100%;
+}
+.header .group-flex .btn-menu {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+}
+@media (max-width: 1023px) {
+  .header .group-flex .btn-menu {
+    width: 25px;
+    height: 25px;
+  }
+}
+.header .group-flex .btn-menu .menu-bar {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+@media (max-width: 1023px) {
+  .header .group-flex .btn-menu .menu-bar {
+    height: 1px;
+  }
+}
+.header .group-flex .btn-menu .menu-bar.top {
+  top: 6px;
+}
+.header .group-flex .btn-menu .menu-bar.bottom {
+  top: auto;
+  bottom: 6px;
+}
+.header .group-flex .btn-menu.active .menu-bar.top {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.header .group-flex .btn-menu.active .menu-bar.bottom {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.header .group-nav {
+  display: none;
+}
+.header .group-nav .menu-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header .group-nav .menu-item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 -6px 9px 0 #000;
+  font-size: 2em;
+  font-weight: 400;
+  font-family: "voyage", serif;
+  cursor: pointer;
+}
+.header .group-nav .menu-item.home {
+  background: #35141B;
+  z-index: 6;
+}
+.header .group-nav .menu-item.stories {
+  background: #5E071A;
+  z-index: 5;
+}
+.header .group-nav .menu-item.about {
+  background: #750E25;
+  z-index: 4;
+}
+.header .group-nav .menu-item.albums {
+  background: #901B2B;
+  z-index: 3;
+}
+.header .group-nav .menu-item.tips {
+  background: #991821;
+  z-index: 2;
+}
+.header .group-nav .menu-item.contact {
+  background: #AD272E;
+  z-index: 1;
+}
+.header .group-nav .menu-item .link-menu {
+  font-size: 2em;
+}
+.header .group-nav .menu-item:hover {
+  color: #000;
+}
+
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 1000;
+  background: #171616;
+}
+.loading-page .text-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "voyage", serif;
+  color: #fff;
+}
+.loading-page .text-box {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+.loading-page .line01 {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.loading-page .line02 {
+  font-size: 50px;
+  margin-top: 5px;
+  letter-spacing: 10px;
+}
+
+.sc-visual {
+  position: relative;
+  height: 100vh;
+}
+.sc-visual::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(180deg, rgba(27, 27, 27, 0), #171616 80%);
+}
+.sc-visual .img-area {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.sc-visual .img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sc-visual .text-area {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+}
+.sc-visual .text-area .desc {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.sc-visual .text-area .desc span {
+  font-size: 1.5vw;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.sc-visual .text-area .title {
+  line-height: 1;
+  font-family: "voyage", serif;
+  font-size: clamp(30px, 10vw, 170px);
+}
+.sc-visual .text-area .title .wrap {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  gap: 1vw;
+}
+.sc-visual .text-area .shortcut-box {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "voyage", serif;
+}
+.sc-visual .text-area .link-shortcut {
+  font-size: 2.3vw;
+  display: flex;
+  margin-top: 50px;
+  color: #fff;
+}
+.sc-visual .text-area .link-shortcut.contact {
+  margin-right: 50px;
+}
+
+.sc-gallery {
+  position: relative;
+  height: 100vw;
+  overflow: hidden;
+}
+.sc-gallery .title {
+  z-index: 1;
+  position: absolute;
+  font-family: "voyage", serif;
+  line-height: 1;
+  font-size: 5vw;
+}
+.sc-gallery .title.title1 {
+  top: 5vw;
+  left: 10vw;
+}
+.sc-gallery .title.title2 {
+  bottom: 35vw;
+  right: 10vw;
+}
+.sc-gallery .circle-text {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0.6;
+}
+.sc-gallery .circle-text.right {
+  top: -17vw;
+  right: -30vw;
+}
+.sc-gallery .circle-text.left {
+  left: -35vw;
+  bottom: 2vw;
+}
+.sc-gallery .circle-text svg {
+  width: 70vw;
+  height: 70vw;
+}
+.sc-gallery .circle-text svg textPath {
+  font-size: 5px;
+}
+.sc-gallery .img-area {
+  position: absolute;
+}
+.sc-gallery .img-area img {
+  width: 100%;
+  opacity: 0.6;
+}
+.sc-gallery .img-area.top01 {
+  width: 25%;
+  top: 10vw;
+  left: -1vw;
+}
+.sc-gallery .img-area.top02 {
+  width: 45%;
+  top: 10vw;
+  left: 27vw;
+}
+.sc-gallery .img-area.top03 {
+  width: 20%;
+  right: -3vw;
+  top: 5vw;
+}
+.sc-gallery .img-area.bottom01 {
+  width: 35%;
+  left: -3vw;
+  bottom: 20vw;
+}
+.sc-gallery .img-area.bottom02 {
+  width: 40%;
+  bottom: 10vw;
+  right: 25vw;
+}
+.sc-gallery .img-area.bottom03 {
+  width: 30%;
+  bottom: 30vw;
+  right: -4vw;
+}
+
+.sc-plan {
+  padding: 200px 0;
+}
+.sc-plan .plan-list {
+  margin-top: 200px;
+  display: flex;
+  height: 100vh;
+}
+@media (max-width: 1023px) {
+  .sc-plan .plan-list {
+    flex-direction: column;
+  }
+}
+.sc-plan .plan-list .plan-item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.sc-plan .plan-list .img-area img {
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+  object-position: 0px -100px;
+  opacity: 0.5;
+}
+@media (max-width: 1023px) {
+  .sc-plan .plan-list .img-area img {
+    height: 100%;
+  }
+}
+.sc-plan .plan-list .text-area {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 60%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  line-height: 1;
+  padding: 45px;
+}
+@media (max-width: 1023px) {
+  .sc-plan .plan-list .text-area {
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+}
+.sc-plan .plan-list .text-area .num-box {
+  display: flex;
+  overflow: hidden;
+}
+.sc-plan .plan-list .text-area .num {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "voyage", serif;
+}
+@media (max-width: 1023px) {
+  .sc-plan .plan-list .text-area .num {
+    width: 100%;
+    text-align: center;
+  }
+}
+.sc-plan .plan-list .text-area .title-box {
+  display: flex;
+  overflow: hidden;
+}
+.sc-plan .plan-list .text-area .title {
+  font-size: 3vw;
+  margin: 5px 0 20px;
+  font-family: "voyage", serif;
+}
+@media (max-width: 1023px) {
+  .sc-plan .plan-list .text-area .title {
+    width: 100%;
+    text-align: center;
+  }
+}
+.sc-plan .plan-list .text-area .desc {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 1.1vw;
+  font-weight: 300;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+.sc-plan .plan-list .text-area .desc .text {
+  display: block;
+  overflow: hidden;
+}
+
+.sc-history .group-photo {
+  position: relative;
+  overflow: hidden;
+  margin-top: 200px;
+}
+.sc-history .group-photo .img-area {
+  height: 100vh;
+  overflow: hidden;
+}
+.sc-history .group-photo .img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.sc-history .group-photo .text-box {
+  margin-bottom: 100px;
+}
+.sc-history .group-photo .text-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+}
+.sc-history .group-photo .text-area .title {
+  position: relative;
+  display: block;
+  font-size: 6vw;
+  font-weight: 400;
+  overflow: hidden;
+  font-family: "voyage", serif;
+}
+.sc-history .group-photo .text-area .title .front {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.sc-history .group-photo .text-area .title .back {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  transition: transform 0.3s;
+}
+.sc-history .group-photo .text-area .title:hover .front {
+  transform: translateY(-100%);
+}
+.sc-history .group-photo .text-area .title:hover .back {
+  transform: translate(-50%, 0%);
+  font-size: 7vw;
+}
+.sc-history .group-photo .text-area .sub {
+  display: block;
+  font-size: 5vw;
+  font-weight: 400;
+}
+.sc-history .group-photo .text-area .date {
+  display: block;
+  color: red;
+  font-size: 2vw;
+}
+
+.sc-info {
+  display: flex;
+  gap: 50px;
+  padding: 200px 0 200px 80px;
+  align-items: center;
+}
+@media (max-width: 1023px) {
+  .sc-info {
+    padding: 200px 0 200px 20px;
+  }
+}
+.sc-info > div {
+  width: 50%;
+}
+.sc-info .text-area .title {
+  display: block;
+  font-size: 4.5vw;
+  line-height: 1;
+  font-family: "voyage", serif;
+  margin-bottom: 20px;
+}
+.sc-info .text-area .title span {
+  display: block;
+}
+.sc-info .text-area .desc {
+  margin-bottom: 30px;
+  font-size: 1.1vw;
+  font-weight: 400;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.sc-info .link-info {
+  display: block;
+  margin-top: 20px;
+}
+.sc-info .link-info span {
+  font-size: 4.5vw;
+  font-family: "voyage", serif;
+}
+.sc-info .img-area {
+  position: relative;
+}
+.sc-info .img-box {
+  position: relative;
+}
+.sc-info .img-box .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 5;
+}
+.sc-info .img-box img {
+  height: 100%;
+  object-fit: cover;
+  width: auto;
+  filter: grayscale(100%);
+}
+
+.sc-contact {
+  padding-bottom: 100px;
+  font-family: "voyage", serif;
+}
+.sc-contact .link-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.sc-contact .link-contact span {
+  font-size: 13vw;
+}

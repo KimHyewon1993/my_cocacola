@@ -1,0 +1,42 @@
+.footer {
+    padding: 40px 140px;
+    @include tablet {
+        padding: 40px 50px;
+    }    
+    .group-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    .group-area {
+        .title {
+            display: block;
+            font-size: 4vw;
+            line-height: 1;
+            font-weight: 400;
+            font-family: $font-en;
+            margin-bottom: 50px;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.3vw;
+            font-weight: 400;
+            transition: color 0.5s;
+            &:hover {
+                color: red;
+            }
+        }
+        &.right {
+            a {
+                text-align: right;
+            }
+        }
+    }
+    .copy {
+        margin-top: 50px;
+        font-size: 1.1vw;
+        font-weight: 400;
+        opacity: 0.8;
+        text-align: center;
+    }
+}

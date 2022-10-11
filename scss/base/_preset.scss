@@ -1,0 +1,34 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+.group-title {
+    .desc-box {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .desc {
+        color: rgba(237,220,212,.89);
+        font-size: 1.3vw;
+        letter-spacing: 0.1vw;
+    }
+    .title {
+        font-family: $font-en;
+        display: flex;
+        gap: 1vw;
+        justify-content: center;
+        font-size: 6vw;
+        line-height: 1;
+        font-weight: 200;
+        overflow: hidden;
+    }
+}
