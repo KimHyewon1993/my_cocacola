@@ -4,6 +4,7 @@ $(function(){
 
     gsap.set('.loading-page .text-box span',{yPercent:100})
     gsap.to('.loading-page .text-box span',{yPercent:0,stagger:0.3})
+    $('body').addClass('hidden')
 
     setTimeout(function(){
         gsap.to('.loading-page',{
@@ -13,6 +14,7 @@ $(function(){
                 $('.loading-page').remove();
             }
         })
+        $('body').removeClass('hidden')
     },1800)
 
 // nav --------------------------------------------------
@@ -81,7 +83,6 @@ $(function(){
         },
         opacity:1,
     })
-
 
     $('[data-obj]').each(function(index,item){
         y = $(this).data('obj');
@@ -190,24 +191,6 @@ $(function(){
         yPercent:0,
         stagger:0.1
     })
-
-    // imgFade = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger:".sc-history .group-photo",
-    //         start: `top top`,
-    //         end: "+=100%",
-    //         scrub: 1,
-    //         pin:true,
-    //     },
-    //     top:'-50%'
-    // })
-
-    // imgFade.to('.sc-history .img-area .img06',{'z-index':1})
-    // .to('.sc-history .img-area .img05',{'z-index':2})
-    // .to('.sc-history .img-area .img04',{'z-index':3})
-    // .to('.sc-history .img-area .img03',{'z-index':4})
-    // .to('.sc-history .img-area .img02',{'z-index':5})
-    // .to('.sc-history .img-area .img01',{'z-index':6})
 
     gsap.to('.sc-info .bg',{
         scrollTrigger: {

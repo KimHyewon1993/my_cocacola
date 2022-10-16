@@ -1,8 +1,12 @@
-@charset "UTF-8";
-/*반응형 화면 크기*/
-/*반응형, 브라우저 크기가 767px 이하일때*/
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
-/*반응형, 브라우저 크기가 1024px 이상일때*/
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #000;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
@@ -23,19 +27,24 @@
   overflow: hidden;
 }
 .group-title .desc {
-  color: rgba(237, 220, 212, 0.89);
   font-size: 1.3vw;
   letter-spacing: 0.1vw;
+  color: rgba(237, 220, 212, 0.89);
 }
 .group-title .title {
-  font-family: "voyage", serif;
   display: flex;
-  gap: 1vw;
   justify-content: center;
+  gap: 1vw;
+  font-family: "voyage", serif;
   font-size: 6vw;
   line-height: 1;
   font-weight: 200;
   overflow: hidden;
+}
+@media (max-width: 767px) {
+  .group-title .title {
+    font-size: 7vw;
+  }
 }
 
 * {
@@ -77,17 +86,10 @@ body {
   font-weight: 300;
   background: #171616;
   color: #fff6f2;
+  overflow: overlay;
 }
 body.hidden {
   overflow: hidden;
-}
-
-body {
-  -ms-overflow-style: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 @font-face {
@@ -143,7 +145,7 @@ body::-webkit-scrollbar {
   transition: color 0.5s;
 }
 .footer .group-area a:hover {
-  color: red;
+  color: #991821;
 }
 .footer .group-area.right a {
   text-align: right;
@@ -183,17 +185,17 @@ body::-webkit-scrollbar {
   height: 100%;
   width: 150px;
 }
-.header .group-flex .bg {
+.header .group-flex .round {
   position: absolute;
   top: 10px;
   left: 0;
   width: 80px;
   height: 80px;
-  background: #f00;
+  background: #991821;
   border-radius: 50%;
 }
 @media (max-width: 1023px) {
-  .header .group-flex .bg {
+  .header .group-flex .round {
     width: 50px;
     height: 50px;
   }
@@ -231,9 +233,9 @@ body::-webkit-scrollbar {
   display: block;
   width: 100%;
   height: 3px;
-  background: #fff;
   border-radius: 10px;
-  transition: transform 0.5s;
+  transition: rotate 0.5s;
+  background: #fff;
 }
 @media (max-width: 1023px) {
   .header .group-flex .btn-menu .menu-bar {
@@ -269,15 +271,15 @@ body::-webkit-scrollbar {
 }
 .header .group-nav .menu-item {
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  flex: 1;
   width: 100%;
   box-shadow: 0 -6px 9px 0 #000;
-  font-size: 2em;
+  font-size: 4.5vw;
   font-weight: 400;
   font-family: "voyage", serif;
+  text-align: center;
   cursor: pointer;
 }
 .header .group-nav .menu-item.home {
@@ -304,8 +306,10 @@ body::-webkit-scrollbar {
   background: #AD272E;
   z-index: 1;
 }
-.header .group-nav .menu-item .link-menu {
-  font-size: 2em;
+@media (max-width: 767px) {
+  .header .group-nav .menu-item .link-menu {
+    font-size: 6vw;
+  }
 }
 .header .group-nav .menu-item:hover {
   color: #000;
@@ -331,17 +335,27 @@ body::-webkit-scrollbar {
 }
 .loading-page .text-box {
   display: flex;
-  overflow: hidden;
   justify-content: center;
+  overflow: hidden;
 }
 .loading-page .line01 {
   font-size: 18px;
   letter-spacing: 2px;
 }
+@media (max-width: 767px) {
+  .loading-page .line01 {
+    font-size: 12px;
+  }
+}
 .loading-page .line02 {
   font-size: 50px;
-  margin-top: 5px;
   letter-spacing: 10px;
+  margin-top: 5px;
+}
+@media (max-width: 767px) {
+  .loading-page .line02 {
+    font-size: 35px;
+  }
 }
 
 .sc-visual {
@@ -364,15 +378,15 @@ body::-webkit-scrollbar {
 }
 .sc-visual .img-area img {
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
 }
 .sc-visual .text-area {
   position: absolute;
   top: 50%;
+  width: 100%;
   transform: translateY(-50%);
   text-align: center;
-  width: 100%;
 }
 .sc-visual .text-area .desc {
   display: flex;
@@ -385,30 +399,40 @@ body::-webkit-scrollbar {
   letter-spacing: 2px;
 }
 .sc-visual .text-area .title {
-  line-height: 1;
   font-family: "voyage", serif;
   font-size: clamp(30px, 10vw, 170px);
+  line-height: 1;
 }
 .sc-visual .text-area .title .wrap {
   display: flex;
   justify-content: center;
-  overflow: hidden;
   gap: 1vw;
+  overflow: hidden;
 }
 .sc-visual .text-area .shortcut-box {
   display: flex;
   justify-content: center;
-  overflow: hidden;
   font-family: "voyage", serif;
+  overflow: hidden;
 }
 .sc-visual .text-area .link-shortcut {
-  font-size: 2.3vw;
   display: flex;
+  font-size: 2.5vw;
   margin-top: 50px;
   color: #fff;
 }
 .sc-visual .text-area .link-shortcut.contact {
-  margin-right: 50px;
+  margin-right: 100px;
+}
+@media (max-width: 767px) {
+  .sc-visual .text-area .link-shortcut.contact {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .sc-visual .text-area .link-shortcut {
+    font-size: 5vw;
+  }
 }
 
 .sc-gallery {
@@ -417,11 +441,11 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 .sc-gallery .title {
-  z-index: 1;
   position: absolute;
   font-family: "voyage", serif;
   line-height: 1;
   font-size: 5vw;
+  z-index: 1;
 }
 .sc-gallery .title.title1 {
   top: 5vw;
@@ -493,18 +517,19 @@ body::-webkit-scrollbar {
   padding: 200px 0;
 }
 .sc-plan .plan-list {
-  margin-top: 200px;
   display: flex;
   height: 100vh;
+  margin-top: 200px;
 }
 @media (max-width: 1023px) {
   .sc-plan .plan-list {
     flex-direction: column;
+    height: 135vh;
   }
 }
 .sc-plan .plan-list .plan-item {
-  flex: 1;
   position: relative;
+  flex: 1;
   overflow: hidden;
 }
 .sc-plan .plan-list .img-area img {
@@ -523,16 +548,16 @@ body::-webkit-scrollbar {
   position: absolute;
   bottom: -1px;
   left: 0;
-  height: 60%;
   width: 100%;
+  height: 60%;
+  padding: 45px;
   backdrop-filter: blur(5px);
   line-height: 1;
-  padding: 45px;
 }
 @media (max-width: 1023px) {
   .sc-plan .plan-list .text-area {
-    height: 100%;
     padding: 20px;
+    height: 100%;
     text-align: center;
   }
 }
@@ -544,6 +569,7 @@ body::-webkit-scrollbar {
   font-size: 30px;
   font-weight: 500;
   font-family: "voyage", serif;
+  color: #fe587c;
 }
 @media (max-width: 1023px) {
   .sc-plan .plan-list .text-area .num {
@@ -563,6 +589,7 @@ body::-webkit-scrollbar {
 @media (max-width: 1023px) {
   .sc-plan .plan-list .text-area .title {
     width: 100%;
+    font-size: 5vw;
     text-align: center;
   }
 }
@@ -579,6 +606,11 @@ body::-webkit-scrollbar {
   display: block;
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .sc-plan .plan-list .text-area .desc {
+    font-size: 3vw;
+  }
+}
 
 .sc-history .group-photo {
   position: relative;
@@ -590,12 +622,12 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 .sc-history .group-photo .img-area img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.5;
 }
 .sc-history .group-photo .text-box {
@@ -609,6 +641,11 @@ body::-webkit-scrollbar {
   text-align: center;
   z-index: 5;
 }
+@media (max-width: 767px) {
+  .sc-history .group-photo .text-area {
+    width: 80%;
+  }
+}
 .sc-history .group-photo .text-area .title {
   position: relative;
   display: block;
@@ -616,6 +653,11 @@ body::-webkit-scrollbar {
   font-weight: 400;
   overflow: hidden;
   font-family: "voyage", serif;
+}
+@media (max-width: 767px) {
+  .sc-history .group-photo .text-area .title {
+    font-size: 10vw;
+  }
 }
 .sc-history .group-photo .text-area .title .front {
   display: inline-block;
@@ -641,8 +683,13 @@ body::-webkit-scrollbar {
 }
 .sc-history .group-photo .text-area .date {
   display: block;
-  color: red;
   font-size: 2vw;
+  color: #fe587c;
+}
+@media (max-width: 767px) {
+  .sc-history .group-photo .text-area .date {
+    font-size: 4vw;
+  }
 }
 
 .sc-info {
@@ -700,9 +747,9 @@ body::-webkit-scrollbar {
   z-index: 5;
 }
 .sc-info .img-box img {
+  width: auto;
   height: 100%;
   object-fit: cover;
-  width: auto;
   filter: grayscale(100%);
 }
 

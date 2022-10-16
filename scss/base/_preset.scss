@@ -1,3 +1,10 @@
+::-webkit-scrollbar {
+    width: 7px;
+  }
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #000;
+}
 .wrapper {
     position: relative;
     width: 100%;
@@ -17,18 +24,21 @@
         overflow: hidden;
     }
     .desc {
-        color: rgba(237,220,212,.89);
         font-size: 1.3vw;
         letter-spacing: 0.1vw;
+        color: rgba(237,220,212,.89);
     }
     .title {
-        font-family: $font-en;
         display: flex;
-        gap: 1vw;
         justify-content: center;
+        gap: 1vw;
+        font-family: $font-en;
         font-size: 6vw;
         line-height: 1;
         font-weight: 200;
         overflow: hidden;
+        @include mobile {
+            font-size: 7vw;
+        }
     }
 }

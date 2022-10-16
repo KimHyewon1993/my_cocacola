@@ -12,9 +12,8 @@ body {
     font-weight: 300;
     background: #171616;
     color: #fff6f2;
+    overflow: overlay;
     &.hidden{
         overflow: hidden;
     }
 }
-body{-ms-overflow-style:none; }
-body::-webkit-scrollbar { display:none; }
