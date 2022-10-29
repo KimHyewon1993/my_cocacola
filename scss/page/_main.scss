@@ -351,9 +351,13 @@
     align-items: center;
     @include tablet {
         padding: 200px 0 200px 20px;
+        flex-direction: column;
     }
     &>div {
         width: calc(100% / 2);
+        @include tablet {
+            width: 90%;
+        }
     }
     .text-area {
         .title {
