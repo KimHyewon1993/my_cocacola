@@ -670,7 +670,7 @@ body.hidden {
   transition: transform 0.3s;
 }
 .sc-history .group-photo .text-area .title:hover .front {
-  transform: translateY(-100%);
+  transform: translateY(-110%);
 }
 .sc-history .group-photo .text-area .title:hover .back {
   transform: translate(-50%, 0%);
