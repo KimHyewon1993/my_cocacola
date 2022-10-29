@@ -701,10 +701,16 @@ body.hidden {
 @media (max-width: 1023px) {
   .sc-info {
     padding: 200px 0 200px 20px;
+    flex-direction: column;
   }
 }
 .sc-info > div {
   width: 50%;
+}
+@media (max-width: 1023px) {
+  .sc-info > div {
+    width: 90%;
+  }
 }
 .sc-info .text-area .title {
   display: block;
